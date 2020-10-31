@@ -27,7 +27,7 @@
 							echo'
 							<div class="row mb-4">
 								<div class="col-md-2">
-							  <a href="#"><img src="" class="img-thumbnail p-0 border-0" /></a>
+							  
 							</div>
 								<div class="col-md-6">
 									<div class="input-group input-group-lg">
@@ -53,13 +53,20 @@
 										<!-- Images -->
 										<div class="exzoom_img_box" style="background:white">
 										  <ul class="exzoom_img_ul">
-											<li><img src="'.$rows->product_main_image.'"/></li>
-											<li><img src="'.$rows->product_main_image.'"/></li>
-											<li><img src="'.$rows->product_main_image.'"/></li>
-											<li><img src="'.$rows->product_main_image.'"/></li>
-											<li><img src="'.$rows->product_main_image.'"/></li>
-											...
-										  </ul>
+										
+										  <li><img src="'.$rows->product_main_image.'"/></li>'?>
+										  <?php
+										   $branch_img=explode(',',$rows->product_branch_images);
+										   for($i=0; $i<sizeof($branch_img)-1; $i++)
+										   echo 
+											'<li><img src="'.$branch_img[$i].'"/></li>
+										   	
+											'?>
+											
+										
+											
+										 <?php
+										 echo' </ul>
 										</div>
 										<!-- Thumbnail Nav-->
 										<div class="exzoom_nav"></div>
@@ -84,7 +91,9 @@
 												<input type="text" name="quantity" value="1" class="qty">
 												<div class="qtyplus">+</div>
 											</form>
-											<a href="cart?id='.$rows->Product_id.'" class="round-black-btn">Add to Cart</a>
+											<a href="cart?id='.$rows->Product_id.'" class="round-black-btn">إضافة إلى السلة</a>
+											<a href="favorite?id='.$rows->Product_id.'" class="round-black-btn">إضافة إلى المفضلة</a>
+
 											
 										</div>
 									</div>

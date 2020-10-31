@@ -104,6 +104,16 @@ function  getDataWhereOrderProd_details($id)
 }
 
 
+
+
+
+function  getDataGift()
+{
+        $final_query= $this->db->select('product_main_image').$this->db->from('products').$this->db->whereone('gift_id','=','Product_id');
+        return $this->db->executeb($final_query);  
+}
+
+
 ///////////////////// get offers ////////////////////////
 
 function  getDataOffer()

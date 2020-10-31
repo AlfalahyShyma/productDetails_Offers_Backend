@@ -6,7 +6,7 @@
                   <!-- Recent Order Table -->
                   <div class="card card-table-border-none" id="recent-orders">
                     <div class="card-header justify-content-between">
-                      <h2>عروض الخصم </h2>
+                      <h2>العروض </h2>
                       
                       <div class="date-range-report ">
                         <span></span>
@@ -20,9 +20,9 @@
                             <th class="d-none d-md-table-cell">صورة</th>
                             <th>اسم المنتج </th>
                             <th>الصنف</th>
-                            <th class="d-none d-md-table-cell">السعر القديم</th>
+                            <th class="d-none d-md-table-cell">السعر</th>
                             <th class="d-none d-md-table-cell">السعر بعد الخصم</th>
-                            <th class="d-none d-md-table-cell">الكميه</th>
+                            <th class="d-none d-md-table-cell">الهديه</th>
                             <th>عمليات</th>
                           </tr>
                         </thead>
@@ -55,7 +55,7 @@
                                
                                    foreach($rows as $row)
                                    {
-                                    if($row->product_offer_percent == '1' ){
+                                    if($row->product_is_offer == '1' ){
                                        
                                    
                                     echo '
@@ -66,14 +66,11 @@
                             <td >'.$row->category_id.'</td><!-- we want to add category name not id-->
                             <td >'.$row->product_price.'</td>
                             <td >'.$row->product_price_after_discount.'</td>
-                            <td >'.$row->product_Quantity.'</td>
+                            <td><img src="'.'../../'.$row->product_main_image.'" class="img-thumbnail img-fluid" width=60px hight=60px></td>
                             <td >
                                 <div class="btn-group" role="group" aria-label="Basic example">
                                     <a type="button" href="../admin_prod/update_prod?id='.$row->Product_id.'" class="btn btn-success"><span class="ion-edit"></span></a>
-                                    <a type="button" href="" class="btn btn-info"><span class="">%</span></a>
-                                   <a type="button" href="" class="btn btn-warning"><span class="ion-ribbon-b"></span></a>
-                                   <a type="button" href="" class="btn btn-primary"><span class="ion-ios-photos-outline"></span></a>
-                                   <a type="button" href="../admin_prod/delete_prod?id='.$row->Product_id.'" class="btn btn-danger"><span class="ion-android-delete"></span></a>
+                                    
 
 
                                    
